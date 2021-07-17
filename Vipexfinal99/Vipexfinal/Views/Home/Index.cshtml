@@ -1,0 +1,198 @@
+﻿@model HomeVm;
+@{
+    ViewData["Title"] = "Index";
+}
+<section>
+    <div class="">
+        <div style="margin-top: 30px;" >
+            <div>
+                <img style="width:1340px;" src="@Model.Mainphoto.Image" class="mainphot" alt="">
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="mt-5">
+    <div class="container">
+
+        <div class="main-calculator" style="border: 1px solid black;margin-left: 20.1%;">
+            <div class="main-calculator_slider slick-initialized slick-slider">
+                <div class="slick-list draggable">
+                    <div class="slick-track" style="opacity: 1; width: 656px; transform: translate3d(0px, 0px, 0px);">
+                        <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 656px;">
+                            <div class="bizimki">
+                                <div class="main-calculator_item" style=" display: inline-block;">
+                                    <div class="row">
+                                        <div class="col-lg-7 col-md-6 bizimelem  col-sm-6">
+                                            <div class="main-calculator_item-title">
+                                                @Model.Calculator.Title <small>@Model.Calculator.Title2</small>
+                                            </div>
+                                            <div class="selectric-wrapper selectric-js-select">
+                                                <div class="selectric-hide-select">
+                                                    <select class="js-select" id="country1" tabindex="-1">
+                                                        <option data-cur="0.202" value="15">TRY</option>
+                                                        <option data-cur="1.703" value="16">$</option>
+                                                    </select>
+                                                </div>
+                                                <div class="selectric"><span class="label">TRY</span><b class="button">▾</b></div>
+                                                <div class="selectric-items" tabindex="-1">
+                                                    <div class="selectric-scroll">
+                                                        <ul>
+                                                            <li data-index="0" class="selected">TRY</li>
+                                                            <li data-index="1" class="last">$</li>
+                                                        </ul>
+                                                    </div>
+                                                </div><input class="selectric-input" tabindex="0">
+                                            </div>
+                                            <input type="text" class="main-calculator_input" onkeyup="calculateTotal(this);" placeholder="Məbləğ, məsələn: 100" tabindex="0">
+                                            <p></p>
+                                            <p>@Model.Calculator.Title3: <span id="cashPay"></span></p>
+                                        </div>
+                                        <div class="col-lg-5 col-md-6 col-sm-6">
+                                            <div class="main-calculator_item-title">@Model.Calculator.Title</div>
+                                            <div class="row">
+                                                <div class="col-6 biziminput2">
+                                                    <div class="main-calculator_select">
+                                                        <div class="selectric-wrapper selectric-js-select">
+                                                            <div class="selectric-hide-select">
+                                                                <select class="js-select" id="country" tabindex="-1">
+                                                                    <option data-cur="0.202" value="15">Türkiyə</option>
+                                                                    <option data-cur="1.703" value="16">ABŞ</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="selectric"><span class="label">Türkiyə</span><b class="button">▾</b></div>
+                                                            <div class="selectric-items" tabindex="-1">
+                                                                <div class="selectric-scroll">
+                                                                    <ul>
+                                                                        <li data-index="0" class="selected">Türkiyə</li>
+                                                                        <li data-index="1" class="last">ABŞ</li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div><input class="selectric-input" tabindex="0">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 biziminput">
+                                                    <div class="main-calculator_wrapper-input">
+                                                        <input type="number" class="main-calculator_input-small " id="wght" placeholder="Çəki" tabindex="0">
+                                                        <input type="hidden" class="form-control" id="count" value="1" placeholder="Bağlama sayı (məs:1,2,3)" required="" tabindex="0">
+                                                        <select style="border-radius:50%;background:white;border:1px solid lightgray;" class="" id="weight" tabindex="0">
+                                                            <option value="kg">kq</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <a onclick="calculatePrice()" class="main-calculator_btn" tabindex="0">Hesabla</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-calculator_cost">
+                Cəmi <span id="totalPrice" class="main-calculator_sum">$0,00</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="margin-top: 30px; margin-bottom: 30px;">
+    <div class="container">
+        <div class="row">
+            <div class="advantages-box">
+                <div class="advantages-title">
+                    Bizim üstünlüklərimiz
+                </div>
+                <div class="advantages-content">
+                    @foreach (Advantages advantages in Model.Advantages)
+                    {
+                        <div class=" col-advantages-item col-lg-4">
+                            <span class="advantages-item_icon"><img alt="alt" src="@advantages.Image"></span>
+                            <span class="advantages-item_title">@advantages.Titlet</span>
+                            <p class="ptag" style="font-size:21px;">
+                                @advantages.Title
+                            </p>
+                        </div>
+                    }
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="quality-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="quality-title">
+                        <a asp-controller="Xidmet" asp-action="Index"> Xidmətlər </a>
+
+                    </div>
+                </div>
+                @foreach (Xidmet xidmet in Model.Xidmets)
+                {
+                    <div class="col-md-6">
+                        <a asp-controller="Xidmet" asp-action="Index">
+                            <span class="quality-box_title" style="color: #3d4499;" >@xidmet.Title</span>
+                            <div class="quality-box">
+                                <img style="width: 350px; height: 260px;" src="@xidmet.Image" >
+                            </div>
+                        </a>
+                    </div>
+                }
+
+              
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="work-section"  style="margin-top:50px;margin-bottom:30px">
+        <div class="container">
+            <div class="work-section_title"><span class="title-text">Necə İşləyİr</span></div>
+            <div class="row">
+
+                @foreach(Working working in Model.Workings)
+                {
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="step-item">
+                            <span class="step-item_icon"><img alt="alt" src="@working.Image"></span> @working.Title
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+</section>
+<section>
+    <div class="partners-section">
+        <div class="container">
+            <div class="work-section_title"><a asp-controller="Webpages" asp-action="Index" class="title-text">Nümunə saytlar</a></div>
+            <ul class="partners-list">
+                @foreach (Numunes numunes in Model.Numunes)
+                {
+                    <li>
+                        <a target="_blank" href="@numunes.Link" rel="nofollow"> <img alt="alt" src="@numunes.Image"></a>
+                    </li>
+
+                }
+
+            </ul>
+            <div class="text-center" style="margin-bottom: 25px;">
+                <a asp-controller="Webpages" asp-action="Index" class="all-shop_btn">Hamısı</a>
+            </div>
+        </div>
+    </div>
+</section>

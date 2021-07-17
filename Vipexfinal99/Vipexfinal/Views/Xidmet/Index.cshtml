@@ -1,0 +1,63 @@
+﻿@model XidmetVm
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/xidmet.css">
+</head>
+
+<body>
+   
+    <main class="main-content">
+        <div class="news-section">
+            <div class="news-section_header">
+                <div class="container">
+                    <div class="news-section_title">
+                        XİDMƏTLƏRİMİZ
+                    </div>
+                </div>
+            </div>
+            <div class="news-section_body">
+                <div class="container ">
+                    <div class="row">
+                        @foreach (Xidmet xidmet in Model.Xidmets)
+                        {
+                        <div class="news-sidebar_item  col-lg-4" style="        display: inline-flex;
+        margin-bottom: 30px;">
+                            <div class="news-sidebar_item-desc ">
+
+                                <span class="news-sidebar_item-title "><a class="word2" style="color: black;">@xidmet.Title</a></span>
+                            </div>
+                            <div class="news-sidebar_item-img " style="background-image:url(@xidmet.Image);background-position:center; "></div>
+
+                        </div>
+                        }
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+ 
+</body>
+
+</html>
+
+
+

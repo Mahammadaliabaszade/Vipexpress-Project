@@ -1,0 +1,109 @@
+﻿@model Bio;
+
+<header class="ui-header">
+    <div class="head_top-panel" style="height: 60px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-7 left-column" style="display: inherit;">
+                    <ul class="social-network" style="display: inherit;">
+
+                        <li>
+                            <a href="@Model.Instagramlink"><img alt="alt" src="@Model.Instagram"></a>
+                        </li>
+                        <li style="margin-top:6px;">
+                            <a href="@Model.Facebooklink"><img alt="alt" src="@Model.Facebook"></a>
+                        </li>
+                    </ul>
+                    <ul class="head_top-panel_menu" style="PADDING-LEFT: 30px;">
+                        <li><a asp-controller="Contact" asp-action="Index">Əlaqə</a></li>
+                        <li><a  asp-controller="Faq" asp-action="Index">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-5">
+                    <ul class="head_log-register">
+
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" style="margin-right: 12px;" asp-controller="Account" asp-action="Login">DAXİL OL</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Account" asp-action="Register">QEYDİYYAT</a>
+
+                            </li>
+
+                        }
+                        else
+                        {
+                    <li class="nav-item">
+
+                        
+                        <a class="nav-link" asp-controller="Hesab" asp-action="Index">@User.Identity.Name</a>
+
+                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a>
+
+                            </li>
+                        }
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-head" style="margin-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-3 main-head_left-column">
+                    <div class="head-logo">
+                        <a href="https://vipex.az">
+                            <img alt="alt" style="max-width: 100%;
+                            " src="https://vipex.az/new/img/static/logo.png">
+                        </a>
+                    </div>
+                    <div class="hamburger hamburger--spring">
+                        <div class="hamburger-box">
+                            <div class="hamburger-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-9 main-head_right-column">
+                    <nav class="head-nav" style="padding-left: 20px;">
+                        <ul class="head-nav_menu">
+                            <li class="">
+                                <a  asp-controller="Home" asp-action="Index" >Əsas</a>
+                            </li>
+                            <li class="">
+                                <a asp-controller="Xidmet" asp-action="Index" rel="nofollow">Xidmətlər</a>
+                            </li>
+                            <li class="">
+                                <a  asp-controller="Tarif" asp-action="Index" >Tariflər</a>
+                            </li>
+                            <li class="">
+                                <a asp-controller="Xeberler" asp-action="Index">Xəbərlər</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+
+                    <a data-toggle="modal" href="#packageSearchModal" style="padding-right: 25px;">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    @if (!User.Identity.IsAuthenticated)
+            {
+
+
+<a asp-controller="Account" asp-action="Login" class="callback-btn main-btn">Sifariş et</a>
+            }
+            else
+            {
+                <a asp-controller="Sifaris" asp-action="Sifaris" class="callback-btn main-btn">Sifariş et</a>
+            }
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

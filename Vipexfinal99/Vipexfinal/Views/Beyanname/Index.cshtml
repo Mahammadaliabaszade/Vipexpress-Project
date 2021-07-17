@@ -1,0 +1,93 @@
+﻿@model Vipexfinal.Models.Beyanname
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/beyanname.css">
+</head>
+
+<body>
+    
+
+
+    <section style="margin-top: 30px;margin-bottom: 25px;">
+        <form asp-controller="Beyanname" asp-action="Beyanname">
+            <div class="container">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Bəyannamə</h4>
+
+                    </div>
+
+                    <div class="form-group" >
+                        <div class="modal-body">
+                            <div class="row" style="padding-bottom: 14px;">
+                                <div class="col-md-12 col-lg-12 col-sm-12">
+                                    <label>Link <sup>*</sup></label>
+                                    <input required="" type="text" asp-for="Link" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row" style="padding-bottom: 14px;">
+
+                                <div class="col-md-6 col-lg-6 col-sm-12">
+                                    <label>Sifariş tarixi<sup>*</sup></label>
+                                    <input required="" asp-for="SendTime" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6 col-sm-12">
+                                <label>Mağaza <sup>*</sup></label>
+                                <input required="" asp-for="MagazaName" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row" style="padding-bottom: 14px;">
+
+
+                            <div class="col-md-6 col-lg-6 col-sm-12">
+                                <label>Qiymət<sup>*</sup></label>
+                                <input   step="1" min="1" max="99" asp-for="Qiymet" class="form-control" required="required">
+                                <span class="error1">
+                                    <i class="error-log fa fa-exclamation-triangle"></i>
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="row" style="padding-bottom: 14px;">
+                            <div class="col-12 col-lg-12">
+                                <div class="form-group">
+                                    <label>Çatdırılma unvani  qeyd edin</label>
+                                    <input  asp-for="OfisName" class="form-control " required="required">
+                         
+                                </div>
+                                <div class="form-group">
+                                    <label>Qeyd<sup>*</sup></label>
+                                    <textarea required="" class="form-control" placeholder="Əgər əlavə qeydiniz varsa bura yaza bilərsiniz" asp-for="Qeyd"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+
+                    <button type="submit" id="processInvoice" class="custom-btn cbtn-sky text-uppercase cbtn-shadow">Göndər</button>
+                </div>
+            </div>
+            </div>
+        </form>
+     
+    </section>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/burgermenu.js">
+    </script>
+</body>
+
+</html>
+

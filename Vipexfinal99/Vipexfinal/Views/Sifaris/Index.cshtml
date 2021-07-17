@@ -1,0 +1,116 @@
+﻿@model Vipexfinal.Models.Sifaris
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/sifariset.css">
+</head>
+
+<body>
+
+
+
+    <section style="margin-top: 30px;margin-bottom: 25px;">
+        <div class="container">
+            <div class="col-12 col-lg-12">
+                <div class="tracking-block">
+                    <div class="put-reference-number">
+                      
+                        <div class="tab-content">
+                            <div id="menu0" class="tab-pane fade in active show" data-currency="TRY">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-5 btn offset-md-7  totalInManatsOnline"></div>
+                                            <div style="display:none" class="col-md-5 offset-md-2 btn  totalInManats"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form asp-controller="Sifaris" asp-action="Sifaris">
+                              
+                                    <div class="form-group" id="form-group" >
+                                        <div class="order-item" data-order="0">
+                                            <div class="row">
+                                                <div class="col-12 col-md-4 col-lg-4">
+                                                    <label>Link</label>
+                                                    <div class="input-group ">
+                                                        <input  required="" class="form-control link" asp-for="Link">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-2 col-lg-2">
+                                                    <label>Məhsulun sayı</label>
+                                                    <div class="input-group ">
+                                                        <input  required="" type="number" value="1" step="1" min="1" max="99" onblur="$('.price').blur()"  class="form-control countofproduct" asp-for="ProductCount">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-2 col-lg-2">
+                                                    <label>Qiymət</label>
+                                                    <div class="input-group ">
+                                                        <input  required="" type="number"  step="1" min="1" max="99"  value="1"  class="form-control price" asp-for="Qiymet"  >
+                                                        <span class="currency">TRY</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-md-4 col-lg-4">
+                                                    <label>Rəngi</label>
+                                                    <div class="input-group">
+                                                        <input  required="" placeholder="Rəng" asp-for="Color" class="notes form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg-4">
+                                                    <label>Ölçüsü</label>
+                                                    <div class="input-group">
+                                                        <input  required="" placeholder="Ölçüsü" asp-for="OLcu" class="notes form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg-4">
+                                                    <label>Əlavə qeyd</label>
+                                                    <div class="input-group">
+                                                        <textarea  required="" placeholder="Əlavə qeyd" asp-for="Qeyd" class="notes form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg-4">
+                                                    <label>Tarix</label>
+                                                    <div class="input-group">
+                                                        <input  required="" placeholder="Ölçüsü" asp-for="Sendtime" class="notes form-control" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+               
+                                        
+                                        <div class="col-md-1" style="margin:0 auto">
+                                        </div>
+                                    
+                                        <div class="col-md-3" style="padding-right:5px;">
+                                            <button  type="submit"  class="custom-btn cbtn-sky text-uppercase cbtn-shadow pull-right">SİFARİŞ EDİN</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/burgermenu.js">
+    </script>
+</body>
+
+</html>

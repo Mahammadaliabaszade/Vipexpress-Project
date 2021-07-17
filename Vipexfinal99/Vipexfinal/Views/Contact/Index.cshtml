@@ -1,0 +1,85 @@
+﻿@model Vipexfinal.Models.Elaqe
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/elaqe.css">
+</head>
+
+<body>
+    
+    <section>
+        <div class="container">
+            <div class="news-section">
+                <div class="news-section_header">
+                    <div class="container">
+                        <div class="news-section_title">
+                            ƏLAQƏ
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="contact-section_content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form asp-controller="Contact" asp-action="Sendemail" >
+                           
+                            <div class="contact-form_title">Əlaqə forması</div>
+                            <div class="form-group">
+
+                                <input type="text"  required=""  class="form-input" placeholder="Ad" asp-for="Name">
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="text"  required=""  class="form-input" placeholder="Shirket" asp-for="Shirket">
+                                <span asp-validation-for="Shirket" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="email"  required=""  class="form-input" placeholder="Epoct" asp-for="Epoct">
+                                <span asp-validation-for="Epoct" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" required="" class="form-input" asp-for="Number" placeholder="Telefon">
+                                <span asp-validation-for="Number" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-textarea"  required=""  asp-for="Message" placeholder="Mesaj"></textarea>
+                                <span asp-validation-for="Message" class="text-danger"></span>
+                            </div>
+                            <input type="submit" class="contact-form_submit main-btn" value="Göndər">
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="contact-list">
+                            <li class="contact-mail">
+                                <a href="cdn-cgi/l/email-protection.html#046d6a626b44726d74617c2a657e" style="color: black;"> <i class="far fa-envelope"></i>info@vipex.az </a>
+                            </li>
+                            <li class="contact-phone">
+                                <a href="tel:+(+99412) 310-22-60  " style="color: black;"> <i class="fas fa-phone-square-alt"></i>(+99412) 310-22-60 </a>
+                            </li>
+                            <li class="contact-whatsapp">
+                                <a href="tel:(+99450) 800-55-85 " style="color: black;"> <i class="fab fa-whatsapp"></i>(+99450) 800-55-85 </a>
+                            </li>
+                            <li class="contact-adress" style="color: black;"> <i class="fas fa-location-arrow"></i>Nazim Hacıyev küç. 40</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+﻿@model Vipexfinal.Models.AppUser
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/sifariset.css">
+</head>
+
+<body>
+
+
+
+    <section style="margin-top: 30px;margin-bottom: 25px;">
+        <div class="container">
+            <div class="col-12 col-lg-12">
+                <div class="tracking-block">
+                    <div class="put-reference-number">
+
+                        <div class="tab-content">
+                            <div id="menu0" class="tab-pane fade in active show" data-currency="TRY">
+                                <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-5 btn offset-md-7  totalInManatsOnline"></div>
+                                            <div style="display:none" class="col-md-5 offset-md-2 btn  totalInManats"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form asp-controller="Hesab" asp-action="Odenis2">
+
+                                    <div class="form-group" id="form-group">
+                                        <div class="order-item" data-order="0">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <h3>Sizin hazırki balansınız</h3>
+                                                    <h3>@Model.Balans.Amount AZN</h3>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg-4">
+                                                    <label>Məbləğ</label>
+                                                    <div class="input-group ">
+                                                        <input required="required"  step="1" min="1" max="99" class="form-control link" asp-for="@Model.Balans.Amount">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg-4 ">
+                                                    <label>Kart Nömrəsi</label>
+                                                    <div class="input-group ">
+                                                        <input required="required" class="form-control link">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-4 col-lg-4 " style="margin-left:340px">
+                                                    <label>Cv</label>
+                                                    <div class="input-group ">
+                                                        <input required="required" class="form-control link" >
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+
+                                        <div class="col-md-1" style="margin:0 auto">
+                                        </div>
+
+                                        <div class="col-md-3" style="padding-right:5px;">
+                                            <button type="submit" class="custom-btn cbtn-sky text-uppercase cbtn-shadow pull-right">Ödəniş Edin</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>

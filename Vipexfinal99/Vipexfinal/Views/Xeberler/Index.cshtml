@@ -1,0 +1,74 @@
+﻿@model XeberVm
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/xeberler.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="news-section_header">
+                <div class="container">
+                    <div class="news-section_title">
+                        Xəbərlər
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="news-section_body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 right-column">
+                        <div class="main-news" style="background-image:url(https://vipex.az/storage/news/OfohDhhv52Ht83lVuBJBSjrRvOp9yS2ZgoJZWmVT.jpeg);background-repeat:no-repeat;">
+                            <div class="main-news_title">
+
+                                <div class="main-news_name">
+                                    <a href="./xeberler2.html">Vipex.az saytında bağlamanı bəyan etmə qaydası</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 left-column">
+                        <aside class="news-sidebar">
+                            <div class="news-h3_title"><span class="news-h3_title-text">Xəbərlər</span></div>
+                            <div class="news-sidebar_content">
+
+                                @foreach (Xeber xeber in Model.Xebers)
+                                {
+                                    <div class="news-sidebar_item">
+                                        <div class="news-sidebar_item-img" style="background-image:url(@xeber.Image);background-position:center;width: 104px;height: 100px;"></div>
+                                        <div class="news-sidebar_item-desc">
+
+                                            <span class="news-sidebar_item-title"><a asp-controller="Xeberler" asp-action="Detail" asp-route-id="@xeber.Id">@xeber.Title</a></span>
+                                        </div>
+                                    </div>
+                                }
+                                
+
+
+
+
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+</body>
+
+</html>

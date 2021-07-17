@@ -1,0 +1,66 @@
+﻿@model List<Tarifusa>
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+
+<div class="row">
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="">
+            <div class="card-body" style="width:1400px">
+                <h4 class="card-title">Tarif Usa cədvəli</h4>
+                
+                <div class="table-responsive pt-3">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    Çəki
+                                </th>
+                                <th>
+                                    Qiymət
+                                </th>
+                                <th>
+                                    Tənzimləmələr
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Tarifusa tar in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @count
+                                    
+                                </td>
+                                <td>
+                                   @tar.Cekitwo kg-dək(her bağlama üçün)
+                                </td>
+                                <td>
+                                  
+                                    @tar.Qiymet <span style="color:forestgreen"> $ </span> 
+                                   
+                                </td>
+                                <td>
+                                   
+                                    <a class="btn btn-warning" asp-action="Update" asp-route-id="@tar.Id"><i class="mdi mdi-auto-fix"> </i></a>
+                                  
+                                </td>
+
+                            </tr>
+                                count++;
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

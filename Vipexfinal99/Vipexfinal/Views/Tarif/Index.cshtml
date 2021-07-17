@@ -1,0 +1,128 @@
+﻿@model TarifturkeyVm
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/tarifler.css">
+</head>
+
+<body>
+    
+    <section>
+        <div class="tariff-section_header">
+            <div class="container">
+                <div class="tariff-main_title">Ölkələr üzrə tariflər</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="tariff-section_content">
+            <div class="container">
+                <div id="turkiye" class="tabcontent" style="display: none;">
+                    <div class="tariff-section_row">
+                        <div class="column left-column turkiye">
+                            <div class="tariff-section_title">
+                                <img alt="alt" src="https://vipex.az/new/img/static/country/02.jpg"> Türkiyədən çatdırılma
+                            </div>
+                            <table class="tariff-table">
+                                <tbody>
+                                    @foreach (TarifTurkey tarifTurkey in Model.TarifTurkeys)
+            {
+                                    <tr>
+                                        <td>@tarifTurkey.Ceki - @tarifTurkey.Cekitwo kq dək (hər bağlama üçün)</td>
+                                        <td>@tarifTurkey.Qiymet $</td>
+                                    </tr>
+            }
+                                    
+                                   
+                                    <tr colspan="2">
+                                        <td>Maye məhsulların çatdırılma qiyməti standart tariflərlə hesablanır</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="baki" class="tabcontent" style="display: block;">
+                    <div class="tariff-section_row">
+                        <div class="column left-column baki">
+                            <div class="tariff-section_title">
+                                <img alt="alt" src="https://vipex.az/new/img/static/country/01.jpg"> Türkiyədən çatdırılma
+                            </div>
+                            <table class="tariff-table">
+                                <tbody>
+                                    @foreach (TarifTurkey tarifTurkey in Model.TarifTurkeys)
+                                    {
+                                        <tr>
+                                            <td>@tarifTurkey.Ceki - @tarifTurkey.Cekitwo kq dək (hər bağlama üçün)</td>
+                                            <td>@tarifTurkey.Qiymet $</td>
+                                        </tr>
+                                    }
+
+                                    <tr colspan="2">
+                                        <td>Maye məhsulların çatdırılma qiyməti standart tariflərlə hesablanır</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="column">
+                            <div class="tariff-section_title">
+                                <img alt="alt" src="https://vipex.az/new/img/static/country/02.jpg"> Amerikadan çatdırılma
+                            </div>
+                            <table class="tariff-table">
+                                <tbody>
+                                    @foreach (Tarifusa tarifusa in Model.Tarifusas)
+                                    {
+                                        <tr>
+                                            <td>@tarifusa.Cekitwo kg dək (hər bağlama üçün)</td>
+                                            <td>@tarifusa.Qiymet $</td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="amerika" class="tabcontent" style="display: none;">
+                    <div class="tariff-section_row">
+                        <div class="column left-column turkiye">
+                            <div class="tariff-section_title">
+                                <img alt="alt" src=""> Amerikadan çatdırılma
+                            </div>
+                            <table class="tariff-table">
+                                <tbody>
+                                    @foreach (Tarifusa tarifusa in Model.Tarifusas)
+                                    {
+                                        <tr>
+                                            <td>@tarifusa.Cekitwo kg dək (hər bağlama üçün)</td>
+                                            <td>@tarifusa.Qiymet $</td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+</body>
+
+</html>
+

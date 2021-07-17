@@ -1,0 +1,24 @@
+﻿@model Tarifusa;
+@{
+    ViewData["Title"] = "Update";
+}
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Tarif dəyişmək</h4>
+
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="Qiymet">Qiymət</label>
+                        <input asp-for="Qiymet" class="form-control" placeholder="Name">
+                        <span asp-validation-for="Qiymet"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-success mr-2">Dəyişdir</button>
+                    <button class="btn btn-danger" ><a style="color:white;" asp-action="Index">Geri qayıt</a></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

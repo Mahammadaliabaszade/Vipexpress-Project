@@ -1,0 +1,160 @@
+﻿@model Vipexfinal.Models.AppUser;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIPEX</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/sifarislerim.css">
+</head>
+
+<body>
+
+    
+    <section style="margin-top: 30px;">
+        <div class="wshipping-content-block wshipping-breadcroumb inner-bg-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <h1>SİFARİŞLƏRİM</h1>
+                        <a href="https://vipex.az" title="">Sifarişlər</a> / Hesabım
+                    </div>
+                    <div class="col-12 col-lg-5 text-right">
+                        <h4>Siz sifariş edin, biz çatdıraq. <span>SÜRƏTLİ</span> və <span>TƏHLÜKƏSİZ!</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="margin-bottom: 30px;">
+        <div class="container" style="margin-top: 30px;">
+            <div class="row">
+
+                <div class="col-lg-12 text-box text-box-style3" style="margin-bottom: 20px;">
+                    <div class="text-box">
+                        <button class="izem" style="background:#FF8728;margin-bottom: 10px;">
+                            <a >Müştəri ID @Model.MusteriKod</a>
+                        </button>
+
+                        <button class="izem" style="background:#FF8728;margin-bottom: 10px">
+                            <a asp-controller="Sifaris" asp-action="Index">SIFARIS EDIN</a>
+                        </button>
+
+                        <button class="izem" style="background:#FF8728;margin-bottom: 10px">
+                            <a asp-controller="Beyanname" asp-action="Index">BEYANNAME</a>
+                        </button>
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="col-lg-4 ">
+                    <ul class="category-list d-none-down-md ">
+                        <li class="item "><a asp-controller="Hesab" asp-action="Fursetler" title=" ">Mağazalardakı fürsətlər</a></li>
+                        <li class="item "><a asp-controller="Hesab" asp-action="Index" title=" ">Xaricdəki ünvanlarım</a></li>
+                        <li class="item "><a asp-controller="Hesab" asp-action="Odenis" title=" ">Ödəniş et</a></li>
+                        <li class="item "><a asp-controller="Hesab" asp-action="Sifaristabl" title=" ">SİFARİŞLƏRİM</a></li>
+                        <li class="item "><a asp-controller="Beyanname" asp-action="Beyantabl" title=" ">BƏYANNAMƏLƏRİM</a></li>
+
+                        <li class="item "><a asp-controller="Hesab" asp-action="Gozleyenler" title=" ">Təstiq gözləyən <span class="badge badge-success ">Yeni</span></a></li>
+
+                        <li class="item "><a asp-controller="Hesab" asp-action="Balansartir">Balans artir</a></li>
+                        <li class="item "><a asp-controller="Hesab" asp-action="Sorgularlist">Sorğular</a></li>
+
+                        <li class="item "><a asp-controller="Account" asp-action="Logout" title=" ">Çıxış</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-8">
+
+                    <div>
+                        <div class="card-body" style="width:800px">
+
+                            <div class="table-responsive pt-3">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Link
+                                            </th>
+                                            <th>
+                                                Məhsul sayı
+                                            </th>
+                                            <th>
+                                                Qiymət
+                                            </th>
+                                            <th>
+                                                Qeyd
+                                            </th>
+                                            <th>
+                                                Rəng
+                                            </th>
+                                            <th>
+                                                Status
+                                            </th>
+                                            <th>
+                                                Tarix
+                                            </th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (Sifaris email in Model.Sifarisler)
+                                        {
+                                            <tr>
+
+                                                <td>
+                                                    @email.Link
+                                                </td>
+                                                <td>
+                                                    @email.ProductCount
+                                                </td>
+                                                <td>
+                                                    @email.Qiymet
+                                                </td>
+                                                <td>
+                                                    @email.Qeyd
+                                                </td>
+                                                <td>
+                                                    @email.Color
+                                                </td>
+                                                <td>
+                                                    @email.Status.Name
+                                                </td>
+                                                <td>
+                                                    @email.Sendtime
+                                                </td>
+
+
+
+
+
+                                            </tr>
+
+
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+    </section>
+   
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+﻿@model Vipexfinal.Models.AppUser;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIPEX</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/hesabim.css">
+</head>
+
+<body>
+
+   
+    <section style="margin-top: 30px;">
+        <div class="wshipping-content-block wshipping-breadcroumb inner-bg-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <h1>Hesabım</h1>
+                        <a href="https://vipex.az" title="">Əsas</a> / Hesabım
+                    </div>
+                    <div class="col-12 col-lg-5 text-right">
+                        <h4>Siz sifariş edin, biz çatdıraq. <span>SÜRƏTLİ</span> və <span>TƏHLÜKƏSİZ!</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="margin-bottom: 30px;">
+        <div class="container" style="margin-top: 30px;">
+            <div class="row">
+                <div class="col-lg-12 text-box text-box-style3" style="margin-bottom: 20px;">
+                    <div class="text-box">
+                        <button class="izem" style="background:#FF8728;margin-bottom: 10px;">
+                            <a href="">Müştəri ID @Model.MusteriKod</a>
+                        </button>
+
+                        <button class="izem" style="background:#FF8728;margin-bottom: 10px">
+                            <a asp-controller="Sifaris" asp-action="Index">SIFARIS EDIN</a>
+                        </button>
+
+                        <button class="izem" style="background:#FF8728;margin-bottom: 10px">
+                            <a asp-controller="Beyanname" asp-action="Index">BEYANNAME</a>
+                        </button>
+
+                        
+
+                    </div>
+
+
+                </div>
+                <div class="col-lg-4 ">
+                    <ul class="category-list d-none-down-md ">
+                        <li class="item "><a asp-controller="Hesab" asp-action="Fursetler" title=" ">Mağazalardakı fürsətlər</a></li>
+                        <li class="item "><a asp-controller="Hesab" asp-action="Index" title=" ">Xaricdəki ünvanlarım</a></li>
+                        <li class="item "><a asp-controller="Hesab" asp-action="Odenis" title=" ">Ödəniş et</a></li>
+                        <li class="item "><a asp-controller="Hesab" asp-action="Sifaristabl" title=" ">SİFARİŞLƏRİM</a></li>
+                        <li class="item "><a asp-controller="Beyanname" asp-action="Beyantabl" title=" ">BƏYANNAMƏLƏRİM</a></li>
+
+                        <li class="item "><a asp-controller="Hesab" asp-action="Gozleyenler" title=" ">Təstiq gözləyən <span class="badge badge-success ">Yeni</span></a></li>
+                   
+                        <li class="item "><a asp-controller="Hesab" asp-action="Balansartir" >Balans artir</a></li>
+                        <li class="item "><a asp-controller="Hesab" asp-action="Sorgularlist">Sorğular</a></li>
+                       
+                        <li class="item "><a asp-controller="Account" asp-action="Logout" title=" ">Çıxış</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-8 ">
+                    <div class="tracking-block ">
+                        <ul class="nav nav-tabs " >
+                            <li class="nav-item "><a class="nav-link active " href="#address_0 " aria-controls="track-by-number " role="tab " data-toggle="tab " aria-expanded="true ">Türkiyə</a></li>
+
+                        </ul>
+                        <div class="tab-content ">
+                            <div  class="tab-pane active " id="address_0 " >
+                                <h3>Türkiyə</h3>
+                                <div class="put-reference-number ">
+                                    <form action=" ">
+                                        <div class="form-group ">
+                                            <div class="row ">
+                                                <div class="col-12 col-md-6 col-lg-6 ">
+                                                    <label>Ölkə:</label>
+                                                    <div class="input-group ">
+                                                        <strong> Türkiyə</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>USER:</label>
+                                                    <div class="input-group ">
+                                                        <strong>@Model.UserName @Model.MusteriKod </strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>il / Şəhər:</label>
+                                                    <div class="input-group ">
+                                                        <strong>İstanbul</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>ilçe / rayon:</label>
+                                                    <div class="input-group ">
+                                                        <strong>Bahçelievler</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>Ad:</label>
+                                                    <div class="input-group ">
+                                                        <strong>VipETicaretHizmetleri</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>Soyad:</label>
+                                                    <div class="input-group ">
+                                                        <strong>SanveDışTicLŞ</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>TC kimlik:</label>
+                                                    <div class="input-group ">
+                                                        <strong>66823284324</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>Adres:</label>
+                                                    <div class="input-group ">
+                                                        <strong>Hürriyet Mah.Sümbül SK.No:11B @Model.UserName @Model.MusteriKod 9250820429 Halkali VD</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>Telefon:</label>
+                                                    <div class="input-group ">
+                                                        <strong>05524164355</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>Posta kodu:</label>
+                                                    <div class="input-group ">
+                                                        <strong>34191</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>Adres adı:</label>
+                                                    <div class="input-group ">
+                                                        <strong>Vipexpress</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-6 " style=" margin-bottom: 20px; ">
+                                                    <label>Vergi No:</label>
+                                                    <div class="input-group ">
+                                                        <strong>9250820429</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+  
+</body>
+
+</html>

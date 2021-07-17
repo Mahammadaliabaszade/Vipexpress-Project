@@ -1,0 +1,75 @@
+﻿@model FaqVm
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/faq.css">
+</head>
+
+<body>
+    
+    <section>
+        <div class="container">
+            <div class="faq-section_header">
+                <div class="container">
+                    <div class="faq-section_title">FAQ</div>
+
+                    <div class="text">Siz sifariş edin, biz çatdıraq. <span>SÜRƏTLİ</span> və <span>TƏHLÜKƏSİZ!</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="faq-section_body">
+                <div class="container">
+                    @foreach (Faq faq in Model.Faqs)
+                    {
+                        <div class="faq-item  is-active ">
+                            <div class="faq-item_title">@faq.Question <span class="faq-item_icon"></span></div>
+                            <div class="faq-item_text">
+                                <p>
+                                   @faq.Answer
+                                </p>
+                            </div>
+                        </div>
+                    }
+
+
+                    <div class="faq-section_subtitle">
+                        <h1>
+                            Sualınız qaldı?
+                        </h1>
+                        <small>
+                            Sualınızı bu hissədə tapa bilmirsinizsə.
+                            Bizimlə əlaqə saxlaya bilərsiniz.
+                            <span class="min">Kömək etməkdən məmnun olarıq!</span>
+                        </small>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="contact-box">
+                                <a href="tel:(+99412) 310-22-60" class="contact-box_phone-number">(+99412) 310-22-60</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="contact-box contact-box_mod">
+                                <a href="cdn-cgi/l/email-protection.html#f59c9b939ab5839c85908ddb948f" class="contact-box_email">info@vipex.az</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+</body>
+
+</html>
+

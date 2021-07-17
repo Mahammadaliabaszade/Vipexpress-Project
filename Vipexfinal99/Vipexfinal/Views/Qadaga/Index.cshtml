@@ -1,0 +1,61 @@
+﻿@model QadagaVm
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/qadagalar.css">
+</head>
+
+<body>
+    
+
+    <section>
+        <div class="wshipping-content-block wshipping-breadcroumb inner-bg-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <h1>Daşınması qadağan olan məhsullar</h1>
+                        <a href="index.html" title="Home">Əsas</a> / Daşınması qadağan olan məhsullar
+                    </div>
+                    <div class="col-12 col-lg-5 text-right " style="font-size: 18px; ">
+                        <h4 style="color: white;">Siz sifariş edin, biz çatdıraq. <span style="color: orange; font-size: 18px; ">SÜRƏTLİ</span> və <span style="color: orange; font-size: 18px; ">TƏHLÜKƏSİZ!</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wshipping-content-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="row">
+                            <div class="col-12 col-lg-12">
+                                <p style="margin-top: 0;
+                                margin-bottom: 1rem;">
+                                   @Model.Qadaga.Title
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+
+</html>
+

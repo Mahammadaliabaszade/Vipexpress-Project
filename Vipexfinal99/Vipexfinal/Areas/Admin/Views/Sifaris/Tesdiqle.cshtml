@@ -1,0 +1,24 @@
+﻿@model Sifaris;
+@{
+    ViewData["Title"] = "Update";
+}
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Sifaris tesdiqle</h4>
+
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="StatusId">Sifarisi tesdiqlemek ucun 3 reqemini daxil edin</label>
+                        <input asp-for="StatusId" class="form-control" placeholder="Name">
+                        
+                    </div>
+
+                    <button type="submit" class="btn btn-danger mr-2">Update</button>
+                    <button class="btn btn-light"><a asp-action="Index">Cancel</a></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

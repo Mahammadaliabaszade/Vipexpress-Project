@@ -1,0 +1,16 @@
+﻿@model Category;
+@{
+    ViewData["Title"] = "Detail";
+}
+<div class="container">
+    <div class="row">
+        <h3 style="margin-top:30px"> Kateqoriyanın adı :</h3>
+        <h3 class="pl-3" style="margin-top:30px"> @Model.Name</h3>
+    </div>
+  
+    <div class="row mt-5">
+
+        <a class="btn btn-danger" asp-action="Index">Go Back</a>
+    </div>
+</div>
+

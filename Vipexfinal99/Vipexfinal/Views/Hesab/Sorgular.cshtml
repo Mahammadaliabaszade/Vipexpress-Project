@@ -1,0 +1,54 @@
+﻿@model Vipexfinal.Models.Sorgu;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sorgular.css">
+</head>
+
+<body>
+  
+    <section style="margin-top: 30px;margin-bottom: 45px;">
+        <div class="container">
+            <div class="col-12 col-lg-12">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Yeni sorğu</h5>
+                        
+                        </div>
+                        
+                        <form asp-controller="Hesab" asp-action="Sorgucreate">
+
+
+                            <div class="form-group">
+
+                                <input type="text" style="display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #464a4c; background-color: #fff; background-image: none;  background-clip: padding-box; border: 1px solid rgba(0,0,0,.15);" class="form-input" placeholder="Basliq" asp-for="Title">
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" style="display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #464a4c; background-color: #fff; background-image: none; background-clip: padding-box; border: 1px solid rgba(0,0,0,.15);" class="form-input" placeholder="Link" asp-for="Link">
+                                <span asp-validation-for="Link" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="5" class="form-control" asp-for="Description" placeholder="Sorğu *"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input   style="display: block; width: 100%; padding: .5rem .75rem; font-size: 1rem; line-height: 1.25; color: #464a4c; background-color: #fff; background-image: none; background-clip: padding-box; border: 1px solid rgba(0,0,0,.15);" class="form-input" placeholder="Tarix" asp-for="Sendtime">
+                                <span asp-validation-for="Sendtime" class="text-danger"></span>
+                            </div>
+                            <input type="submit" class="contact-form_submit main-btn" value="Göndər">
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/burgermenu.js">
+    </script>
+</body>
+
+</html>

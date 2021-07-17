@@ -1,0 +1,107 @@
+﻿@model WebpagesVm
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vipex.az - Ən son kampaniya və xəbərlər</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/saytlar.css">
+</head>
+
+<body>
+
+ 
+
+    <section>
+        <div class="wshipping-content-block wshipping-breadcroumb inner-bg-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <h1>Nümunə saytlar</h1>
+                        <a href="https://vipex.az" title="Home">Əsas</a> / Nümunə saytlar
+                    </div>
+                    <div class="col-12 col-lg-5 text-right">
+                        <h4>Siz sifariş edin, biz çatdıraq. <span>SÜRƏTLİ</span> və <span>TƏHLÜKƏSİZ!</span></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="products">
+        <div class="container">
+            <div class="row pt-5 mb-5">
+                <div class="col-12  left-menu d-flex justify-content-between" style="margin-bottom: 30px;">
+                    <ul class="category-mobile d-md-none list-unstyled">
+                        @foreach (Category category in Model.Categories)
+                        {
+                            <li>
+                                <a asp-controller="Webpages" asp-action="Index" asp-route-id="@category.Id" data-id="@category.Name.ToLower()">@category.Name</a>
+                            </li>
+                        }
+
+
+
+
+                    </ul>
+                    <ul class="category d-none d-md-flex list-unstyled">
+
+                        @foreach (Category category in Model.Categories)
+                        {
+                            <li>
+                                <a asp-controller="Webpages" asp-action="Index" asp-route-id="@category.Id" data-id="@category.Name.ToLower()">@category.Name</a>
+                            </li>
+                        }
+
+
+
+                    </ul>
+
+
+                </div>
+
+                @foreach (Webpages webpages in Model.Webpages)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="product-item text-center" data-id="@webpages.Category.Name.ToLower()">
+                            <div class="img">
+                                <a href="@webpages.Link">
+                                    <img src="@webpages.Image" class="img-fluid" alt="">
+                                </a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                }
+
+
+
+
+
+
+
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="~/js/burgermenu.js">
+    </script>
+</body>
+
+</html>
+
+</html>
+
